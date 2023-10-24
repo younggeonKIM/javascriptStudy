@@ -14,6 +14,7 @@ solution 함수를 완성해주세요. -->
 <script type="text/javascript">
 const solution=n=>n.reduce((a,v)=>n.length>10?a+v:a*v)
 
+
 function solution(num_list) {
     var sum=0;
     var mul=1;
