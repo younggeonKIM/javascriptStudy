@@ -22,10 +22,38 @@ var cloneUser3 = Object.assign({gender : 'male'}, user);	// gender라는 프로�
 																								// {gender : 'male', name: "mike", age : 30}
 var cloneUser4 = Object.assign({name: "Tom"}, user);		// 같은 프로퍼티면 덮어씌워짐.
 
-const user = {name : "Mike"}
+const user2 = {name : "Mike"}
 const age_info = { age: 30}
 const gender_info = {gender : "male"}
-var cloneUser5 = Object.assign(user, age_info, gender_info);		// 객체 변수를 합칠 수 있음.
+var cloneUser5 = Object.assign(user2, age_info, gender_info);		// 객체 변수를 합칠 수 있음.
+
+console.log(cloneUser);
+console.log(cloneUser2);
+console.log(cloneUser3);
+console.log(cloneUser4);
+console.log(cloneUser5);
+
+// Object.entries()	-> [키, 값] 쌍을 담은 배열을 반환.
+const user3={
+		name : "Mike",
+		age : 30,
+		gender : "male"
+}
+
+console.log(Object.entries(user3));	// [ ["name", "Mike"], ["age", 30], ["gender", "male"] ]
+
+// Object.is()
+var test = { a: 1};
+console.log(Object.is(test, test));		// true
+
+console.log(Object.is(null, null));		// true
+console.log(Object.is([], []));				// false
+console.log(Object.is(0, -0));				// false
+console.log(Object.is(-0, -0));				// true
+console.log(Object.is(NaN, 0/0));		// true
+
+// Object.getPrototypeOf()		-> 명시된 객체의 프로토타입을 반환.
+console.log("객체 프로토타입 : "+Object.getPrototypeOf(cloneUser5));
 </script>
 </body>
 </html>
