@@ -54,6 +54,56 @@ console.log(Object.is(NaN, 0/0));		// true
 
 // Object.getPrototypeOf()		-> 명시된 객체의 프로토타입을 반환.
 console.log("객체 프로토타입 : "+Object.getPrototypeOf(cloneUser5));
+
+// delete 		-> 객체 내의 속성을 지울 수 있음.
+var obj = {
+		a: 'hi',
+		b: 'zero',
+};
+console.log(obj.b);		// zero
+delete obj.b;
+console.log(obj.b);		// undefined
+
+// hasOwnProperty() 		-> 특정 프로퍼티가 해당 객체에 존재하는지를 검사.
+											// 같은 이름의 프로퍼티라도 상속받은 프로퍼티는 false 값을 반환.
+var obj2 = {
+		example: 'yes',
+}
+console.log(obj2.example);		// yes
+console.log(obj2.hasOwnProperty('example'));		// true
+console.log(obj2.toString);			// function toString() { [native code] }
+console.log(obj2.hasOwnProperty('toString'));			// false
+
+
+// propertyIsEnumerable()		-> 특정 프로퍼티가 해당 객체에 존재하고, 열거 가능한 프로퍼티인지를 검사.
+function Dog(color, name, age) {
+
+	this.color = color;
+	this.name = name;
+	this.age = age;
+}
+var myDog = new Dog("흰색", "마루", 1);
+// color 프로퍼티의 enumerable 속성을 false로 설정.
+Object.defineProperty(myDog, 'color', { enumerable : false});
+
+document.write(myDog.propertyIsEnumerable("color") + "<br>");		// false
+document.write(myDog.propertyIsEnumerable("name") + "<br>");		// true
+document.write(myDog.propertyIsEnumerable("age"));						// true
+
+// isPrototypeOf()		-> 특정 객체의 프로토타입 체인에 현재 객체가 존재하는지를 검사.
+var GrandParent = function() {};
+
+var Parent = function() {};
+Parent.prototype = new GrandParent();
+Parent.prototype.constructor = Parent;
+
+var Child = function() {};
+Child.prototype = new Parent();
+Child.prototype.constructor = Child;
+
+var child = new Child();
+console.log(Parent.prototype.isPrototypeOf(child));		// true
+console.log(GrandParent.prototype.isPrototypeOf(child));		// true
 </script>
 </body>
 </html>
