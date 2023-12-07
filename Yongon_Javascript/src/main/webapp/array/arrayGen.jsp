@@ -44,6 +44,7 @@ console.log(Object.getOwnPropertyDescriptors(e2));
 	const c3 = Array(1,2,3);		// [1, 2, 3]
 	console.log(b3);
 	console.log(c3);
+	
 // 3. Array.of 메서드
 const a4 = Array.of(1, 2, 'abc', {}); 	// [1, 2, 'abc', {}]
 const b4 = Array.of(10);			// [10]
@@ -65,6 +66,40 @@ console.log(c5);
 	const e5 = Array.from(d5, v => v.toLowerCase());		// ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
 	console.log(e5);	
 
+
+
+// 1 ~ N까지 자연수를 나열한 배열 생성 (규칙적인 수 나열)
+	// Array 생성자 함수
+	const a6 = [...new Array(10)].map((_, i) => i + 1);
+	console.log(a6);			// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	const a61= new Array(5).map((_, i) => i +1);		// []
+	const a62 = [...new Array(5)];		// [ undefined, undefined, undefined, undefined, undefined]
+	const a63 = [...new Array(5)].map((_, i) => i+1);	// [1, 2, 3, 4, 5]
+	console.log(a61);
+	console.log(a62);
+	console.log(a63);
+		
+	
+	// Array.from 메서드
+	const b6 = Array.from({ length: 10}, (_, i) => i+1);
+	console.log(b6);			// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	const b61 = Array.from({length : 10});		// [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
+	console.log(b61);
+
+	// Array 생성자 함수 로 배열 생성하는 방법과 Array.from 메서드로 배열 생성하는 방법 을 실행시간측정해 비교
+	console.time('Array 생성자 함수');
+	const a7 = [...new Array(1000000)].map((_, i) => i+1);
+	console.timeEnd('Array 생성자 함수');
+
+	console.time('Array.from 메서드');
+	const b7 = Array.from({length: 1000000}, (_, i) => i+1);
+	console.timeEnd('Array.from 메서드');
+
+// 똑같은 요소로 채워진 배열 생성
+const a8 = new Array(5).fill(0);	// [0, 0, 0, 0, 0]
+const b8 = [1, 2, 3, 4, 5].fill(0);		// [0, 0, 0, 0, 0]
+console.log(a8);
+console.log(b8);
 </script>
 </body>
 </html>
