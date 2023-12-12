@@ -72,6 +72,8 @@
 	var removed = arr6.splice(1, 1);		// 제거한 요소를 반환받을 수 있음.
 	console.log(arr6);
 	console.log(removed);	// e
+
+
 </script>
 </body>
 </html>
