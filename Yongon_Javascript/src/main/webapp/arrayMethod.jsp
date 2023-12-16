@@ -93,6 +93,40 @@ const students = [
 	const res6 = students.find((student) => student.score === 90);
 	console.log(res6);
 	// Student { name: "C", age: 30, enrolled: true, score: 90}
+	
+// array.filter()
+	const res7 = students.filter((student) => student.enrolled);
+	console.log(res7);
+	// (3) [Student, Student, Student]
+	// 0 : Student {name: "A", age: 29, enrolled: true, score: 45}
+	// 1 : Student {name: "C", age: 30, enrolled: true, score: 90}
+	// 2 : Student {name: "E", age: 18, enrolled: true, score: 88}
+	
+// array.map()
+	const res8 = students.map((student) => student.score);
+	console.log(res8);
+	// [45, 80, 90, 66, 88]
+	
+// array.some()	/	array.every()
+	const res9 = students.some((student) => student.score >= 50);
+	console.log(res9);
+	// true
+
+	const res10 = students.every((student) => student >= 50);
+	console.log(res10);
+	// false
+	
+// array.reduce()		/ 	array.reduceRight()
+	const res11 = students.reduce((prev, curr) => {
+		// prev는 이전 콜백함수의 리턴값이 저장됨.
+		// curr는 배열 아이템을 순차적으로 전달받음.
+		return prev + curr.score;
+		}, 0);
+	console.log( res11 / students.length);
+
+	const res12 = students.reduce((prev, curr) => prev + curr.score, 0);
+	console.log( res12 / students.length);
+	
 </script>
 </body>
 </html>
