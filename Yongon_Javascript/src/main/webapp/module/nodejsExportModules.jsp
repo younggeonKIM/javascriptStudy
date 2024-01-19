@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script type="text/javascript">
+<script type="text/javascript" >
 {
 	let count = 0
 	function increase() {
