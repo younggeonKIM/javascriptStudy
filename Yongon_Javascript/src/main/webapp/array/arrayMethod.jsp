@@ -26,18 +26,21 @@ console.log(res);
 	const fruits = ['apple', 'banana', 'orange'];
 	let res;
 
+	// 배열 모든 요소를 기본 구분자인 쉼표 [ , ] 로 나눈 하나의 문자열로 저장.
 	res = fruits.join();
 	console.log(res);
 	// 'apple,banna,orange'
 
+	// 배열 모든 요소를 join 파라미터 내의 지정된 구분자로 나눈 하나의 문자열로 저장. 
 	res2 = fruits.join(' ');
 	console.log(res);
 	//'apple banana orange'
 
 	
 // array.split()
+	// 하나의 문자열을 split 파라미터 내의 지정된 구분자로 나누어 배열 각 요소로 저장.
 	const array1 = res.split(',');
-	console.log(array1);
+	console.log("split(',') 한 결과 값은 : "+array1);
 
 
 // array.reverse()
@@ -71,7 +74,7 @@ console.log(res);
 	res5 = array4.slice(1, 3);
 	console.log(res5);
 	// [2, 3]
-
+	console.log("array4를 slice한 값은 : "+array4);
 	
 // array.find()
 class Student {
@@ -90,11 +93,13 @@ const students = [
 	new Student('E', 18, true, 88),
 ];
 
+	// find() 는 첫 번째 결과값만을 반환하며, 첫 번째 결과값 찾으면 그 즉시 종료.
 	const res6 = students.find((student) => student.score === 90);
 	console.log(res6);
 	// Student { name: "C", age: 30, enrolled: true, score: 90}
 	
 // array.filter()
+	// filter() 함수는 조건 부합하는 결과값들을 배열에 저장하며 배열을 반환함.
 	const res7 = students.filter((student) => student.enrolled);
 	console.log(res7);
 	// (3) [Student, Student, Student]
