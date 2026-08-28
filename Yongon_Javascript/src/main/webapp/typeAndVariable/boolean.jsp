@@ -14,7 +14,15 @@ console.log(Boolean(0));	// false
 console.log(Boolean(-0));	// false
 console.log(Boolean(NaN));	// false
 
+// 추가된 falsy 값
+console.log("여기서 부터 새로 추가된 falsy 값들 입니다 : ");
+console.log(Boolean(null));	// false
+console.log(Boolean());	// false
+console.log(Boolean(""));	// false
+console.log(Boolean(0n));	// false
+
 // false 일 것 같지만 ture인 값들
+console.log("위의 8가지 정도되는 falsy 이외의 값들은 모두 true입니다. ");
 console.log(Boolean([]));	// true
 console.log(Boolean({}));	// true
 
