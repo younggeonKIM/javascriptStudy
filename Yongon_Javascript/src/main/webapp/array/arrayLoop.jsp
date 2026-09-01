@@ -11,6 +11,12 @@
 
 // Array.prototype.forEach()
 const array1 = ['a', 'b', 'c'];
+
+array1.forEach(function(value, index, array) {
+	
+	console.log("기존 축약형이 아닌 명시형 function : "+value+" 요소 인덱스 번호 : "+index+" 배열 구조 : "+array );
+}); 
+
 array1.forEach((element) => console.log(element));
 	// Expected output: "a"
 	// Expected output: "b"
