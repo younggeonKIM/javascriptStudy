@@ -14,8 +14,10 @@ const array1 = ['a', 'b', 'c'];
 
 array1.forEach(function(value, index, array) {
 	
-	console.log("기존 축약형이 아닌 명시형 function : "+value+" 요소 인덱스 번호 : "+index+" 배열 구조 : "+array );
-}); 
+	console.log("기존 축약형이 아닌 명시형 function : "+value+" 요소 인덱스 번호 : "+index+" 배열 구조 : "+array);
+	// forEach() 함수에 추가적으로 전달된 객체 인자는 모두 이 this 인자로 바인딩됨.
+	console.log(this);
+}, { number : 960127, age : 30}); 
 
 array1.forEach((element) => console.log(element));
 	// Expected output: "a"
