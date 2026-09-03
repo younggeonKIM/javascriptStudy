@@ -11,17 +11,31 @@
 
 // array.sort()
 {
-const arr = [5, 3, 2, 4, 6, 1];
-let res;
-res = arr.sort();		// sort((a, b) => a - b) 와 동일
-console.log(res);
-// [1, 2, 3, 4, 5, 6]
+	const arr = [5, 3, 2, 4, 6, 1];
+	let res;
+	res = arr.sort();		// sort((a, b) => a - b) 와 동일
+	console.log(res);
+	// [1, 2, 3, 4, 5, 6]
+	
+	res = arr.sort((a, b) => b - a);
+	console.log(res);
+	// [6, 5, 4, 3, 2, 1]
+	
+	
+	res = arr.sort(funcsort);
+	function funcsort(firstVal, secondVal){
 
-res = arr.sort((a, b) => b - a);
-console.log(res);
-// [6, 5, 4, 3, 2, 1]
+		// return 값이 양수면 오름차순, 음수면 내림차순, 만약 배열 요소값이 6이면 항상 맨 뒤에 오게 정렬함.
+		if(firstVal === 6){
+			return 1;
+		}
+		if(secondVal === 6){
+			return -1;
+		}
+		return secondVal-firstVal;
+	}
+	console.log("6을 맨 뒤로 오게 하는 sort() 함수 정렬 결과 : "+res);
 }
-
 // array.join()
 	const fruits = ['apple', 'banana', 'orange'];
 	let res;
