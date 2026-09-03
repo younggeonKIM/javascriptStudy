@@ -91,10 +91,22 @@ let data2 = [
 const data3 = [2, 3, 4, 5, 6, 7];
 const sum = data3.reduce(function(accumulator, currValue, index){
 	// 이전 요소의 누계 결과가 accumulator에 저장됨, 첫 번째 요소의 반복자 (iterator)는 생략돼 실행 안됨.
+	// reduce() 함수의 파라미터 부분에 callback 함수 뒤에 추가로 0을 전달할 경우, 첫 번째 요소 반복자를 생략하지 않고 실행함.
 	console.log("reduce() 함수의 실행 로그 : "+accumulator+" "+index);
 	return accumulator + currValue;
-})
+}, 0);
 console.log("reduce() 함수 실행 결과 총 합계 : "+sum);
+
+// reduceRight
+const difference = data3.reduceRight(function(accumulator, currValue, index){
+
+	// reduceRight() 함수는 reduce() 함수와 매우 똑같은 기능에 배열 요소의 역순으로 실행되는 함수.
+	// 마찬가지로 reduceRight() 함수의 파라미터에 전달된 callback 함수 뒤에 0을 전달해주면 첫 번째 요소 반복자가 
+	// 생략하지 않고 실행함.
+	console.log("reduceRight() 함수의 실행 로그 : "+accumulator+" "+index);
+	return accumulator - currValue;
+}, 0);
+console.log("reduceRight() 함수 실행 결과 : "+difference);
 </script>
 </body>
 </html>
