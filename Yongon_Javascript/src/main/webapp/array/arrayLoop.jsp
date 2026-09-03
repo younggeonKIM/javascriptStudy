@@ -85,6 +85,16 @@ let data2 = [
 	});
 		// 결과 출력
 		console.log(result);		// true
+
+
+// reduce
+const data3 = [2, 3, 4, 5, 6, 7];
+const sum = data3.reduce(function(accumulator, currValue, index){
+	// 이전 요소의 누계 결과가 accumulator에 저장됨, 첫 번째 요소의 반복자 (iterator)는 생략돼 실행 안됨.
+	console.log("reduce() 함수의 실행 로그 : "+accumulator+" "+index);
+	return accumulator + currValue;
+})
+console.log("reduce() 함수 실행 결과 총 합계 : "+sum);
 </script>
 </body>
 </html>
