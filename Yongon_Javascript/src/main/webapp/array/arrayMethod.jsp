@@ -34,6 +34,7 @@
 		}
 		return secondVal-firstVal;
 	}
+	// [ 5, 4, 3, 2, 1, 6]
 	console.log("6을 맨 뒤로 오게 하는 sort() 함수 정렬 결과 : "+res);
 }
 // array.join()
