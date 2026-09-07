@@ -34,6 +34,8 @@ const d = 100n;
 // true, 30000은 종이컵에 담긴 30L, 100n은 덤프트럭에 담긴 100mL 의 물이라고 생각하면 됨.
 console.log("Number 자료형과 BigInt 자료형의 숫자를 비교 결과 : "+(c>d));
 
+
+
 </script>
 </body>
 </html>

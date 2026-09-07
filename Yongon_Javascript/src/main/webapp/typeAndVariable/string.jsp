@@ -55,6 +55,35 @@ document.write("<br>"+sample.trim()+sample2); // "Hello Worldhello world"
 
 sample = "hello";
 document.write("<br>"+sample.length); // 5
+
+
+// ES6 도입된 template literal
+let a = `안녕하세요.
+김영건입니다.
+잘부탁드립니다.
+자동 줄바꾸기입니다.
+`;
+// <pre> 태그를 써서 텍스트 공백 및 줄바꿈을 유지해줌.
+document.write("<br><pre>"+a+"</pre>");
+
+// css의 [ pre-line ] 속성을 적용해서 HTML 상에서 바꿀 수도 있음.
+// "white-space : pre-line" 은 공백은 압축시키며, 개행문자 [ \n ] 는 개행으로 처리해줌.
+document.write("<br><div style=\"white-space: pre-line;\">"+a+"</div>");
+
+// 정규표현식과 replace() 함수로 개행문자를 g(전역 검색) 방식으로 하나하나 찾아서 HTML이 인식하는 [ <br> ] 태그로 바꿔주기.
+// 만약 정규표현이 어려우면 [ replaceAll() ] 함수로 문자열 전역에 있는 개행문자를 검색해 전부 바꿔주는 방법도 있음.
+document.write("<br>"+a.replace(/\n/g, '<br>'));
+document.write("<br>"+a.replaceAll("\n", '<br>'));
+
+const obj = {
+		person : [ "영건", "효경", "시은", "영민", "강민", "성무", "정인", "진솔", "인용"],
+		computer : "XP",
+		age : 10
+};
+
+// javascript 템플릿 리터럴과 JSP EL 표현식 문법을 헷갈리지 않게 하기 위해 [ $ ] 달러 기호 앞에 [ \ ] (백슬래시) 를 붙여 이스케이프 시켜줌.
+// javascript 템플릿 리터럴 기호 [ ` ] (backtick) 내에서는 HTML에 표시하기 위한 [ "" ] (큰따옴표) 와 [ + ] (덧셈) 기호를 넣어줄 필요가 없음.
+document.write(`<br>\${ obj.person[1] }이라는 사람은 \${ obj.computer } 컴퓨터를 가지고 있으며, 나이는 \${ obj.age }입니다.`);
 </script>
 </body>
 </html>
