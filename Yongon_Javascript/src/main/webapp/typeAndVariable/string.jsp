@@ -33,11 +33,14 @@ result_replace =sample.replace("Hello", "Hi");
 document.write("<br>"+result_replace); 		// "Hi World! Hello" (최초로 일치하는 문자만 치환됨)
 
 sample = "Hello World";
-var result_substring = sample.substring(0, 5); // 0번째 index부터 시작해 5번째 index 앞까지 해당하는 문자열 반환
-var result_substr = sample.substr(6, 5); // 6번째 index부터 5글자만큼 반환.
+let result_substring = sample.substring(0, 5); // 0번째 index부터 시작해 5번째 index 앞까지 해당하는 문자열 반환
+let result_substr = sample.substr(6, 5); // 6번째 index부터 5글자만큼 반환.
 document.write("<br>"+result_substring); // "Hello"
 document.write("<br>"+result_substr);	 	// "World"
-
+let negativeResult_substr = sample.substr(-3, 4); 
+document.write("<br>"+negativeResult_substr);	 	// "rld"
+let slicedResult = sample.slice(3);
+document.write("<br>"+slicedResult);	 	// "lo World"
 
 sample = "Hello/World";
 var result_split = sample.split("/");
@@ -56,8 +59,11 @@ document.write("<br>"+sample.trim()+sample2); // "Hello Worldhello world"
 sample = "hello";
 document.write("<br>"+sample.length); // 5
 
+document.write("<br>"+"hello 문자열에 's' 문자가 포함돼 있는가? "+sample.includes('s'));
+document.write("<br>"+"hello 문자열이 'h' 문자로 시작되는가? "+sample.startsWith('h'));
+document.write("<br>"+"hello 문자열이 'o' 문자로 끝나는가? "+sample.endsWith('o'));
 
-// ES6 도입된 template literal
+// ES6부터 도입된 template literal
 let a = `안녕하세요.
 김영건입니다.
 잘부탁드립니다.
