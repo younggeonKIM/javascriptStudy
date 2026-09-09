@@ -43,18 +43,28 @@ let slicedResult = sample.slice(3);
 document.write("<br>"+slicedResult);	 	// "lo World"
 
 sample = "Hello/World";
+// string의 split() 함수를 써서 구분자인 [ / ] (슬래시) 로 나눈 문자열들을 배열의 요소로서 각각 저장함.
 var result_split = sample.split("/");
 document.write("<br>"+result_split[0]);
 document.write("<br>"+result_split[1]);
+// 만약 문자열 내에 존재하지 않는 구분자 ex) [ * ] (asterisk) 로 split() 함수를 실행할 경우, 해당 전체 문자열이 배열 내에 단일 요소로서 저장되게 됨.
+let noDeliSplit = sample.split("*");
+document.write("<br>"+noDeliSplit[0]);
+
+
 
 sample1 = "Hello";
 sample2 ="World";
 document.write("<br>"+sample1.concat(sample2));
 
-sample = "     Hello World ";
+sample = "     Hello World     ";
 sample2 ="hello world"
-document.write("<br>"+sample+sample2);			// " Hello World hello world"
-document.write("<br>"+sample.trim()+sample2); // "Hello Worldhello world"
+// HTML 상에서 연속된 공백 및 줄바꿈 유지시키는 [ "white-space: pre;" ] 속성 사용.
+document.write("<br><div style=\"white-space: pre;\">"+sample+sample2+"</div>");			// "     Hello World     hello world"
+document.write("<br><div style=\"white-space: pre;\">"+sample.trim()+sample2+"</div>"); // "Hello Worldhello world"
+document.write("<br><div style=\"white-space: pre;\">"+sample.trimStart()+sample2+"</div>"); // "Hello World     hello world"
+document.write("<br><div style=\"white-space: pre;\">"+sample.trimEnd()+sample2+"</div>"); // "     Hello Worldhello world"
+
 
 sample = "hello";
 document.write("<br>"+sample.length); // 5
@@ -62,6 +72,9 @@ document.write("<br>"+sample.length); // 5
 document.write("<br>"+"hello 문자열에 's' 문자가 포함돼 있는가? "+sample.includes('s'));
 document.write("<br>"+"hello 문자열이 'h' 문자로 시작되는가? "+sample.startsWith('h'));
 document.write("<br>"+"hello 문자열이 'o' 문자로 끝나는가? "+sample.endsWith('o'));
+
+document.write("<br>"+"hello 문자열 앞에서부터 10자리를 채우기 : "+sample.padStart(10, '*'));
+document.write("<br>"+"hello 문자열 뒤에서부터 10자리를 채우기 : "+sample.padEnd(10, '*'));
 
 // ES6부터 도입된 template literal
 let a = `안녕하세요.
