@@ -25,7 +25,7 @@ yg.name= ;		// Uncaught SyntaxError: Unexpected token ';'
 console.log(yg.name); */
 
 // 프로퍼티의 삭제
-var foo2 = new Object();
+const foo2 = new Object();
 foo2.name = 'foo2';
 foo2.age = 12;
 console.log(foo2.name);		// foo2
@@ -45,6 +45,14 @@ console.log(foo2.name);		// undefined
 console.log(JSON.stringify(foo2));
 // 객체 출력하면 age 키만 남아있는 것을 확인 가능.
 console.log(foo2);
+
+
+// 진짜 키까지 사라진 건지 아니면 값만 undefined로 바뀐 건지 확인하려면 [ in ] 연산자나 hasOwnProperty() 함수를 사용해 알 수 있음.
+console.log('age' in foo2);									// true
+console.log(foo2.hasOwnProperty('age'));		// true
+console.log('name' in foo2);									// false
+console.log(foo2.hasOwnProperty('name'));		// false
+
 </script>
 </body>
 </html>
