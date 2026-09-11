@@ -27,13 +27,24 @@ console.log(yg.name); */
 // 프로퍼티의 삭제
 var foo2 = new Object();
 foo2.name = 'foo2';
+foo2.age = 12;
 console.log(foo2.name);		// foo2
+console.log(foo2.age); 			// 12
 
 foo2.name = null;
 console.log(foo2.name);		// null
 
+// 속성 키와 값 전부 삭제하는 delete 키워드.
 delete foo2.name;
+// 해당 속성 키는 남겨두고 값만 삭제하는 undefined 할당 방식.
+foo2.age = undefined;
+
+// javascript에서는 존재하지 않는 속성 키의 값에 접근하면 undefined 값이 반환됨. 
 console.log(foo2.name);		// undefined
+// 직렬화해서 로그 출력하면 객체 내에 해당 속성의 키 자체가 사라진 것을 확인할 수 있음.
+console.log(JSON.stringify(foo2));
+// 객체 출력하면 age 키만 남아있는 것을 확인 가능.
+console.log(foo2);
 </script>
 </body>
 </html>
