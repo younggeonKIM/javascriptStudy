@@ -16,6 +16,9 @@ map1.set(1, 'Hi');
 map1.set(1, 'Hello');
 
 console.log(map1.get(1));		// Hello
+map1.delete(1);
+console.log(map1.get(1));		// Hello
+
 
 </script>
 </body>
