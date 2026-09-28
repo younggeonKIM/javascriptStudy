@@ -10,7 +10,7 @@
 <script type="text/javascript">
 const a = Infinity;
 console.log(a);
-console.log("Infinity 와 BigInt 10N을 비교 : " + (BigInt(10n) < a));
+console.log("Infinity 와 BigInt 10N을 비교 : " + (BigInt(10n) < a));		// true (Infinity 값을 갖는 a가 더 큰 숫자)
 
 
 const b = [340303,  32, 344, BigInt(100), 5467, 11111, 1,  BigInt(1000), Infinity];
@@ -32,7 +32,7 @@ console.log(b);
 const c = 30000;
 const d = 100n;
 // true, 30000은 종이컵에 담긴 30L, 100n은 덤프트럭에 담긴 100mL 의 물이라고 생각하면 됨.
-console.log("Number 자료형과 BigInt 자료형의 숫자를 비교 결과 : "+(c>d));
+console.log("Number 자료형과 BigInt 자료형의 숫자를 비교 결과 : "+(c>d));		// true (30000이 100n보다 더 큰 숫자)
 
 
 
