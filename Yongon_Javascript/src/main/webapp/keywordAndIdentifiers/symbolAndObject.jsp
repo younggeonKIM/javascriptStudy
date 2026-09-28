@@ -28,11 +28,16 @@ const obj = {
 		[id] : 'abc',
 		[id2] : 0,
 		id : 'hi',
-		id2 : 'hello'
+		id2 : 'hello',
+		[id3] : 'my name is ygKim'
+			
 }
 
 console.log(obj);
 
+// propertyIsEnumerable() 함수로 객체 내의 Symbol 이 직접 정의됐고, 열거 가능한 속성인지 검사. 
+console.log("Symbol id를 검사 : "+obj.propertyIsEnumerable(id));			// true
+console.log("Symbol id3를 검사 : "+obj.propertyIsEnumerable(id3));		// true
 </script>
 </body>
 </html>

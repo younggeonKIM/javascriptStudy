@@ -52,8 +52,10 @@ console.log(obj3);
 // 프로퍼티 검사
 	// 1. in 연산자 : 존재하면 true 반환.
 	var o = {x:1};
-	console.log("o 객체에 x 프로퍼티가 존재하는지 검사한 결과 : " + ("x" in o));		// true
-	console.log("o 객체에 x 프로퍼티가 존재하는지 검사한 결과 : " +( o.x !== undefined));		// true
+	console.log("o 객체에 x 프로퍼티가 존재하는지 검사한 결과 : " + ("x" in o));								// true
+	console.log("o 객체에 y 프로퍼티가 존재하는지 검사한 결과 : " + ("y" in o));								// false
+	console.log("o 객체에 x 프로퍼티가 존재하는지 검사한 결과 : " +( o.x !== undefined));			// true
+	console.log("o 객체에 toString 프로퍼티가 존재하는지 검사한 결과 : " +( "toString" in o));		// true (상속받아온 객체의 프로퍼티까지 검사)
 	
 	// 다음과 같은 경우는 o.x !== undefined를 해도 false 반환.
 	var o2 = {x:undefined};
