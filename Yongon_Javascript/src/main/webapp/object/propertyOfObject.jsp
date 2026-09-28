@@ -58,6 +58,8 @@ console.log(obj3);
 	console.log("o 객체에 toString 프로퍼티가 존재하는지 검사한 결과 : " +( "toString" in o));		// true (상속받아온 객체의 프로퍼티까지 검사)
 	
 	// 다음과 같은 경우는 o.x !== undefined를 해도 false 반환.
+	// x가 undefined로 정의됐기 때문에 undefined 가 아니게 됨.
+	// 그래서 객체 내에 키가 존재하는지 확인할 때 이 방법은 그렇게 추천되지는 않는 방법임.
 	var o2 = {x:undefined};
 	console.log("o2 객체에 x 프로퍼티가 존재하는지 검사한 결과 : " + (o2.x !== undefined));		// false
 
