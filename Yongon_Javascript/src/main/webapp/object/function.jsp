@@ -20,6 +20,22 @@ console.log(func1(func2, 2));					// 4
 console.log(typeof func1);						// function
 console.log(func1 instanceof Object);	// true
 
+
+const obj = {
+		name : 'ygkim',
+		age : 29,
+		sayHello : () => console.log("hello!")
+}
+obj.sayHello();
+
+const obj2 = {
+		name : 'hyokyungJeon',
+		age : 29,
+		sayHi () {
+			console.log("Hi");
+		}
+}
+obj2.sayHi();
 </script>
 </body>
 </html>
