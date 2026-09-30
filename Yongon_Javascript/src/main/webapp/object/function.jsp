@@ -26,7 +26,7 @@ const obj = {
 		age : 29,
 		sayHello : () => console.log("hello!")
 }
-obj.sayHello();
+obj.sayHello();		// hello!
 
 // [ : ] 콜론과 화살표 함수를 제거한 [ {} ] 중괄호 블록으로 기존의 전통적 함수 선언을 포함하는 객체
 const obj2 = {
@@ -34,9 +34,21 @@ const obj2 = {
 		age : 29,
 		sayHi () {
 			console.log("Hi");
+		}, 
+		// getter 메서드
+		get getAge() {
+			return this.age;
+		}, 
+		// setter 메서드
+		set setAge(value) {
+			this.age = value;
 		}
 }
-obj2.sayHi();
+obj2.sayHi();							// Hi
+console.log(obj2.getAge);		// 29
+// getter와 setter에는 파라미터 전달해주는 괄호를 쓰지 않음.
+obj2.setAge = 30;
+console.log(obj2.getAge);
 </script>
 </body>
 </html>
