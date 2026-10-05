@@ -64,6 +64,10 @@ person2.eyesight = "1.1";
 // 기존의 프로퍼티를 변경할 수도 없고, 새로운 프로퍼티를 추가할 수도 없음.
 console.log(person2);
 
+// 객체가 immutable (불변) 객체인지 조사.
+console.log("불변 객체인지 조사.");
+console.log(Object.isFrozen(person2));		// true
+
 </script>
 </body>
 </html>
