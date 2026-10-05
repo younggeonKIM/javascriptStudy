@@ -63,11 +63,19 @@ person2.name = "정상영";
 person2.eyesight = "1.1";
 // 기존의 프로퍼티를 변경할 수도 없고, 새로운 프로퍼티를 추가할 수도 없음.
 console.log(person2);
-
 // 객체가 immutable (불변) 객체인지 조사.
 console.log("불변 객체인지 조사.");
 console.log(Object.isFrozen(person2));		// true
 
+
+// 객체를 새 프로퍼티 추가하는 것만 금지시킬 수도 있음.
+Object.seal(person);
+person.name="종웅";
+person.gameLevel = 200;
+//기존 프로퍼티의 변경만 적용되고, 새 프로퍼티 추가하는 것은 불가능함.
+console.log(person);
+console.log("포장, 봉인 객체인지 조사.");
+console.log(Object.isSealed(person));		// true
 </script>
 </body>
 </html>
