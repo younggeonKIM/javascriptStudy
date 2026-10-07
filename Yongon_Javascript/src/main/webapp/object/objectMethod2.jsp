@@ -12,7 +12,12 @@ const person = {
 		name : "영건",
 		age : 29,
 		height : "160cm",
-		weight : "58kg"
+		weight : "58kg",
+		// 화살표 함수를 사용하면, 해당 객체가 아닌 객체 외부의 global 스코프를 가리키므로 일반 함수 형태의 오버라이딩을 사용.
+		// 또는 템플릿 리터럴 [ `` 내부에 $와 {} ] 을 사용함.
+		toString () {
+			 return this.name +"는 "+this.age+"살이고, "+this.height+"에 "+this.weight+"나갑니다."
+		}
 }
 
 const person2 = {
@@ -76,6 +81,14 @@ person.gameLevel = 200;
 console.log(person);
 console.log("포장, 봉인 객체인지 조사.");
 console.log(Object.isSealed(person));		// true
+
+// toString() 함수는 기본 사용 시에는 별로 유용하지 않을 수 있음.
+console.log(Object.toString(person));
+console.log(person.toString());
+
+// valueOf() 함수는 객체 그대로의 형태를 보여줌.
+console.log(person.valueOf());
+
 </script>
 </body>
 </html>
