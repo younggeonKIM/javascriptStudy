@@ -27,15 +27,19 @@ console.log(rest); */
 const person = {
 	name : "영건",
 	age : 30,
-	bloodType : "B"	
+	bloodType : "B",
+	height : "158cm"
 };
 const { name, age } = person;
 // 프로퍼티의 값으로도 표현 가능하다?
 // 또한, 객체에서도 [ ...rest ] 연산자를 사용 가능.
-const { bloodType : ygBlood, ...rest } = person;
-console.log(name, age);
-console.log(name, ygBlood);
-console.log(rest);
+// default 값도 설정 가능하며, 이때는 field명 뒤에 [ = ] 등호 기호를 붙여서 값을 할당.
+// 만약 객체에 default 값으로 설정한 프로퍼티가 이미 지정돼 있다면, 이 default 값은 사용되지 않을 것임.
+const { bloodType : ygBlood, height='160cm',...rest } = person;
+console.log(name, age);		// 영건, 30
+console.log(name, ygBlood);	// 영건, B
+console.log(height);				// 158cm (이미 객체에 해당 프로퍼티가 정의돼 있어서 default 값 사용되지 않음)
+console.log(rest);					// { name : '영건', age : 30}
 </script>
 </body>
 </html>
